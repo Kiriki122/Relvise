@@ -1,46 +1,42 @@
-
-
-const burger = document.querySelector('.menu-icon');
-const menu = document.querySelector('.menu');
+const burger = document.querySelector(".menu-icon");
+const menu = document.querySelector(".menu");
 const body = document.body;
-const menuLink = document.querySelectorAll('.menu__link');
+const menuLink = document.querySelectorAll(".menu__link");
 
-if ((getComputedStyle(burger).display != 'none') && burger && menu) {
-    burger.addEventListener('click', () => {
-        burger.classList.toggle('_active');
-        menu.classList.toggle('_active');
-		body.classList.toggle('_lock');
-    })
+if (getComputedStyle(burger).display != "none" && burger && menu) {
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("_active");
+        menu.classList.toggle("_active");
+        body.classList.toggle("_lock");
+    });
 
-	menuLink.forEach(element => {
-		element.addEventListener('click', () => {
-			burger.classList.toggle('_active');
-			menu.classList.toggle('_active');
-			body.classList.toggle('_lock');
-		});
-	});
-
+    menuLink.forEach((element) => {
+        element.addEventListener("click", () => {
+            burger.classList.toggle("_active");
+            menu.classList.toggle("_active");
+            body.classList.toggle("_lock");
+        });
+    });
 }
 
 //---Swiper
 
-const popularSlider = new Swiper('.clients-slider', {
-	spaceBetween: 30,
-	slidesPerView: 1,
+const popularSlider = new Swiper(".clients-slider", {
+    spaceBetween: 30,
+    slidesPerView: 2,
     loop: true,
     autoplay: {
         delay: 5000,
-      },
-	breakpoints: {
-		992: {
-			slidesPerView: 6,
-		},
-		660: {
-			slidesPerView: 3,
-		}
-	}
+    },
+    breakpoints: {
+        992: {
+            slidesPerView: 6,
+        },
+        660: {
+            slidesPerView: 3,
+        },
+    },
 });
-
 
 //----Uppearing
 
